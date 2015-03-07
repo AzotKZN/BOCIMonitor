@@ -53,7 +53,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 5;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -70,10 +70,22 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CIDataTableViewCell"owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+  //  NSLog(@"%d", [self.dataArray count]);
+    
     if([self.dataArray count] > 0 && [self.dataArray count] > indexPath.row){
-    dataCIMonitor* object = [self.dataArray objectAtIndex:indexPath.row];
+       // NSLog(@"%@", self.dataArray[indexPath.section][indexPath.row]);
+        if (!self.dataArray[indexPath.section][indexPath.row]) {
+            cell.buildNumber.text = @"empty";
+        } else {
+            dataCIMonitor* object = self.dataArray[indexPath.section][indexPath.row];
     cell.buildNumber.text = object.build;
+        }
+        NSLog(@"%@", cell.buildNumber.text);
+
     }
+    
+   
+
     return cell;
        
 }

@@ -57,6 +57,8 @@
          NSLog(@"JSON: %@", responseObject);
          
          NSMutableArray* objectsArray = [NSMutableArray array];
+         NSMutableArray* objectsArray2 = [NSMutableArray array];
+
 
 
         // NSMutableArray* platformsBranchCount = [NSMutableArray array];
@@ -67,23 +69,30 @@
              count = 0;
              NSArray* dictsArray = [[[responseObject objectForKey:@"data"] objectForKey:platforms[j]] objectForKey:@"column"]; // подставляем название платформы
              for (int i = 0; i <= 3; i++){
-                 
+                 //dataCIMonitor* data;
                  for (NSDictionary* dict in dictsArray[i]) {
                      dataCIMonitor* data = [[dataCIMonitor alloc] initWithServerResponse:dict];
-                     [objectsArray addObject:data];
                      count += 1;
-                     NSLog(@"%d",count);
+                     [objectsArray addObject:data];
                      [platformsBranchCount setObject:data forKey:platforms[j]];
+                 }
+                 NSLog(@"objectsArray = %@", objectsArray);
+                 [objectsArray2 addObject:objectsArray.copy];
+                // [objectsArray2 addObject:objectsArray];
+                 NSLog(@"objectsArray2 = %@", objectsArray2);
+                 [objectsArray removeAllObjects];
 
-                 } } //В цикле проходимся по непустым данным, передаем их на обработку
-//             [platformsBranchCount addObject:[NSNumber numberWithInt:count]];
+             } //В цикле проходимся по непустым данным, передаем их на обработку
+             
              [platformsBranchCount setObject:[NSNumber numberWithInt:count] forKey:platforms[j]];
-//             NSLog(@"key: %@, value: %@ \n", platforms[j], [platformsBranchCount objectForKey:platforms[j]]);
-
          }
         
          if (success) {
-             success(objectsArray, platformsBranchCount);
+             NSLog(@"objectsArray2.count = %lu", (unsigned long)objectsArray2.count);
+             
+             success(objectsArray2, platformsBranchCount);
+             
+             
          }
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
          NSLog(@"Error: %@", error);
