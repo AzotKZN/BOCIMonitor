@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-
+{
+    NSTimer *refreshTimer;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic, retain) NSTimer *refreshTimer;
 @end
 

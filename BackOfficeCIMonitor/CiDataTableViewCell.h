@@ -13,5 +13,9 @@
 
 }
 @property (nonatomic, retain) IBOutlet UILabel *buildNumber;
+@property (weak, nonatomic) IBOutlet UILabel *bBranchType;
+@property (weak, nonatomic) IBOutlet UILabel *bCommiter;
+@property (weak, nonatomic) IBOutlet UILabel *jStatus;
+@property (weak, nonatomic) IBOutlet UILabel *bTS;
 
 @end

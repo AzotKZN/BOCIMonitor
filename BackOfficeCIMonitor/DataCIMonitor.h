@@ -16,6 +16,8 @@
 @property (strong, nonatomic) NSURL* iconUser;
 @property (strong, nonatomic) NSString* branchType;
 @property (strong, nonatomic) NSString* buildStatus;
+@property (strong, nonatomic) NSString* commiter;
+
 
 
 @end

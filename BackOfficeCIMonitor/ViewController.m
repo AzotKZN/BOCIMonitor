@@ -24,6 +24,11 @@
 {
     [super viewDidLoad];
     [self getCIDataFromServer];
+    self.refreshTimer = [NSTimer scheduledTimerWithTimeInterval:60.0f
+                                                         target:self
+                                                       selector:@selector(getCIDataFromServer)
+                                                       userInfo:nil
+                                                        repeats:YES];
 }
 
 #pragma mark - API
@@ -39,7 +44,7 @@
          
      } onFailure:^(NSError *error, NSInteger statusCode)
      {
-         NSLog(@"Fail");
+         NSLog(@"Fail %@ ", error);
      }];
 }
 
@@ -74,9 +79,19 @@
     
     DataCIMonitor* object = self.dataDict[sectionName][indexPath.row];
     cell.buildNumber.text = object.build;
-    
+    cell.bCommiter.text = object.commiter;
+    cell.bBranchType.text = object.branchType;
+    cell.jStatus.text = object.buildStatus;
+    if ([object.buildStatus  isEqual: @"SUCCESS"]) {
+        cell.backgroundColor = [UIColor greenColor];
+    } else if ([object.buildStatus  isEqual: @"FAILURE"])
+    {
+        cell.backgroundColor = [UIColor redColor];
+    } else {
+        cell.backgroundColor = [UIColor yellowColor];
+    }
+    cell.bTS.text = object.timeStamp;
     return cell;
 }
-
 
 @end
