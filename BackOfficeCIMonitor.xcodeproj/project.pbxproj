@@ -32,8 +32,8 @@
 		9216EFC11AA5B06C00FE3753 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9216EFAE1AA5B06C00FE3753 /* UIProgressView+AFNetworking.m */; };
 		9216EFC21AA5B06C00FE3753 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9216EFB01AA5B06C00FE3753 /* UIRefreshControl+AFNetworking.m */; };
 		9216EFC31AA5B06C00FE3753 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 9216EFB21AA5B06C00FE3753 /* UIWebView+AFNetworking.m */; };
-		9216EFCA1AA635DE00FE3753 /* dataCIMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9216EFC91AA635DE00FE3753 /* dataCIMonitor.m */; };
-		9216EFCD1AA6374C00FE3753 /* serverObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9216EFCC1AA6374C00FE3753 /* serverObject.m */; };
+		9216EFCA1AA635DE00FE3753 /* DataCIMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9216EFC91AA635DE00FE3753 /* DataCIMonitor.m */; };
+		9216EFCD1AA6374C00FE3753 /* ServerObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9216EFCC1AA6374C00FE3753 /* ServerObject.m */; };
 		9216EFD11AA8A72A00FE3753 /* CiDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9216EFD01AA8A72A00FE3753 /* CiDataTableViewCell.m */; };
 		9216EFD31AA90E8900FE3753 /* CIDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9216EFD21AA90E8900FE3753 /* CIDataTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -100,10 +100,10 @@
 		9216EFB01AA5B06C00FE3753 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		9216EFB11AA5B06C00FE3753 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		9216EFB21AA5B06C00FE3753 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
-		9216EFC81AA635DE00FE3753 /* dataCIMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dataCIMonitor.h; sourceTree = "<group>"; };
-		9216EFC91AA635DE00FE3753 /* dataCIMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dataCIMonitor.m; sourceTree = "<group>"; };
-		9216EFCB1AA6374C00FE3753 /* serverObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = serverObject.h; sourceTree = "<group>"; };
-		9216EFCC1AA6374C00FE3753 /* serverObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = serverObject.m; sourceTree = "<group>"; };
+		9216EFC81AA635DE00FE3753 /* DataCIMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataCIMonitor.h; sourceTree = "<group>"; };
+		9216EFC91AA635DE00FE3753 /* DataCIMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataCIMonitor.m; sourceTree = "<group>"; };
+		9216EFCB1AA6374C00FE3753 /* ServerObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerObject.h; sourceTree = "<group>"; };
+		9216EFCC1AA6374C00FE3753 /* ServerObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerObject.m; sourceTree = "<group>"; };
 		9216EFCF1AA8A72A00FE3753 /* CiDataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CiDataTableViewCell.h; sourceTree = "<group>"; };
 		9216EFD01AA8A72A00FE3753 /* CiDataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CiDataTableViewCell.m; sourceTree = "<group>"; };
 		9216EFD21AA90E8900FE3753 /* CIDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CIDataTableViewCell.xib; sourceTree = "<group>"; };
@@ -253,10 +253,10 @@
 		9216EFC71AA6350D00FE3753 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				9216EFC81AA635DE00FE3753 /* dataCIMonitor.h */,
-				9216EFC91AA635DE00FE3753 /* dataCIMonitor.m */,
-				9216EFCB1AA6374C00FE3753 /* serverObject.h */,
-				9216EFCC1AA6374C00FE3753 /* serverObject.m */,
+				9216EFC81AA635DE00FE3753 /* DataCIMonitor.h */,
+				9216EFC91AA635DE00FE3753 /* DataCIMonitor.m */,
+				9216EFCB1AA6374C00FE3753 /* ServerObject.h */,
+				9216EFCC1AA6374C00FE3753 /* ServerObject.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -377,7 +377,7 @@
 				9216EFC21AA5B06C00FE3753 /* UIRefreshControl+AFNetworking.m in Sources */,
 				9216EFBE1AA5B06C00FE3753 /* UIAlertView+AFNetworking.m in Sources */,
 				9216EF8B1AA5AFF300FE3753 /* CIMonitorManager.m in Sources */,
-				9216EFCA1AA635DE00FE3753 /* dataCIMonitor.m in Sources */,
+				9216EFCA1AA635DE00FE3753 /* DataCIMonitor.m in Sources */,
 				9216EFB71AA5B06C00FE3753 /* AFSecurityPolicy.m in Sources */,
 				9216EF6C1AA4F69900FE3753 /* ViewController.m in Sources */,
 				9216EFB41AA5B06C00FE3753 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -387,7 +387,7 @@
 				9216EFBD1AA5B06C00FE3753 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				9216EF691AA4F69900FE3753 /* AppDelegate.m in Sources */,
 				9216EFB91AA5B06C00FE3753 /* AFURLRequestSerialization.m in Sources */,
-				9216EFCD1AA6374C00FE3753 /* serverObject.m in Sources */,
+				9216EFCD1AA6374C00FE3753 /* ServerObject.m in Sources */,
 				9216EFB51AA5B06C00FE3753 /* AFHTTPSessionManager.m in Sources */,
 				9216EFD11AA8A72A00FE3753 /* CiDataTableViewCell.m in Sources */,
 				9216EFB61AA5B06C00FE3753 /* AFNetworkReachabilityManager.m in Sources */,

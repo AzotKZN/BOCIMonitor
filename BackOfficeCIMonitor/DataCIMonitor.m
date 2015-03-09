@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Azat Minvaliev. All rights reserved.
 //
 
-#import "dataCIMonitor.h"
+#import "DataCIMonitor.h"
 
 
-@implementation dataCIMonitor
+@implementation DataCIMonitor
 
 - (id) initWithServerResponse:(NSDictionary*) responseObject
 {

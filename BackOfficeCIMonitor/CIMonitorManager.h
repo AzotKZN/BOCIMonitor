@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-@class dataCIMonitor;
+@class DataCIMonitor;
 
 @interface CIMonitorManager : NSObject
 
 + (CIMonitorManager*) sharedManager;
--(void) getResponseCIMonitoronSuccess:(void(^)(NSArray* platformData, NSMutableDictionary* platformsBranchCount)) success
+
+-(void) getResponseCIMonitoronSuccess:(void(^)(NSDictionary* platformData)) success
                             onFailure:(void(^)(NSError* error, NSInteger statusCode)) failure;
 
 @end

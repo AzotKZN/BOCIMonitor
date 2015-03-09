@@ -8,56 +8,54 @@
 
 #import "ViewController.h"
 #import "CIMonitorManager.h"
-#import "dataCIMonitor.h"
+#import "DataCIMonitor.h"
 #import "CiDataTableViewCell.h"
+
 @interface ViewController ()
-@property (strong, nonatomic) NSMutableArray* dataArray;
-@property (strong, nonatomic) NSMutableDictionary* branchCount;
+
+@property (nonatomic) NSArray *sectionNames;
+@property (nonatomic) NSDictionary* dataDict;
+
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    self.dataArray = [NSMutableArray array];
-    self.branchCount = [[NSMutableDictionary alloc]initWithCapacity:10];
     [self getCIDataFromServer];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 #pragma mark - API
-- (void) getCIDataFromServer {
-    [[CIMonitorManager sharedManager] getResponseCIMonitoronSuccess:^(NSArray *platformData, NSMutableDictionary *platformsBranchCount) {
-        [self.dataArray addObjectsFromArray:platformData];
-        [self.branchCount setDictionary:platformsBranchCount];
-        
-        NSLog(@"Done platformData %@", platformData);
-        NSLog(@"Done platformsBranchCount %@", platformsBranchCount);
 
-        [self.tableView reloadData];
-        
-        } onFailure:^(NSError *error, NSInteger statusCode) {
-            NSLog(@"Fail");
-        }];
+- (void) getCIDataFromServer
+{
+    [[CIMonitorManager sharedManager] getResponseCIMonitoronSuccess:^(NSDictionary *platformData)
+     {
+         self.sectionNames = platformData.allKeys;
+         self.dataDict = platformData;
+         
+         [self.tableView reloadData];
+         
+     } onFailure:^(NSError *error, NSInteger statusCode)
+     {
+         NSLog(@"Fail");
+     }];
 }
 
 
 #pragma mark - UITableViewDataSource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 4;
+    return self.sectionNames.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return ((NSDictionary *)self.dataDict[self.sectionNames[section]]).count;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"TEST";
+    return self.sectionNames[section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -70,24 +68,14 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"CIDataTableViewCell"owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-  //  NSLog(@"%d", [self.dataArray count]);
     
-    if([self.dataArray count] > 0 && [self.dataArray count] > indexPath.row){
-       // NSLog(@"%@", self.dataArray[indexPath.section][indexPath.row]);
-        if (!self.dataArray[indexPath.section][indexPath.row]) {
-            cell.buildNumber.text = @"empty";
-        } else {
-            dataCIMonitor* object = self.dataArray[indexPath.section][indexPath.row];
+    NSString *sectionName = self.sectionNames[indexPath.section];
+    
+    
+    DataCIMonitor* object = self.dataDict[sectionName][indexPath.row];
     cell.buildNumber.text = object.build;
-        }
-        NSLog(@"%@", cell.buildNumber.text);
-
-    }
     
-   
-
     return cell;
-       
 }
 
 

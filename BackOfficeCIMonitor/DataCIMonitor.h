@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "serverObject.h"
+#import "ServerObject.h"
 
-@interface dataCIMonitor : serverObject
+@interface DataCIMonitor : ServerObject
 
 @property (strong, nonatomic) NSString* build;
 @property (strong, nonatomic) NSString* timeStamp;

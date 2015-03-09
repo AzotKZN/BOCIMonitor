@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Azat Minvaliev. All rights reserved.
 //
 
-#import "serverObject.h"
+#import "ServerObject.h"
 
-@implementation serverObject
+@implementation ServerObject
 
 - (id) initWithServerResponse:(NSDictionary*) responseObject {
     

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface serverObject : NSObject
+@interface ServerObject : NSObject
 
 - (id) initWithServerResponse:(NSDictionary*) responseObject;
 
